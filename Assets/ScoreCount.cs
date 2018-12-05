@@ -11,8 +11,7 @@ public class ScoreCount : MonoBehaviour {
     private int score = 0;
     //アンカーの座標
     private Vector2 anchor;
-    //スコアを表示する座標
-    private Vector2 v;
+    
 
 	// Use this for initialization
 	void Start () {
@@ -53,13 +52,11 @@ public class ScoreCount : MonoBehaviour {
     void SetScore()
     {
         //アンカーの座標
-        anchor = new Vector2(0, 0);
-        //スコアを表示する座標
-        Vector2 v = new Vector2(87, 252);
+        anchor = new Vector2(-50, -50);
+        
         //UIにアンカーの座標を設定する
         scoreText.GetComponent<RectTransform>().anchoredPosition = anchor;
-        //UIに表示する座標の情報を設定する
-        scoreText.GetComponent<RectTransform>().localPosition = v;
+       
         //スコアをテキストにして表示
         scoreText.GetComponent<Text>().text = string.Format("Score:{0}",score);
     }
